@@ -4,6 +4,6 @@
 /TEST.js
 /.idea
 /out
-/firstWeb/WEB-INF/classes/
-/firstWeb/WEB-INF/lib/
+/firstWeb/WEB-INF/classes
+/firstWeb/WEB-INF/lib
 *.iml
