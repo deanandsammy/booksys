@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .field {
+            margin: 100px auto;
+            padding-top: 18px;
+            width: 400px;
+            height: 280px;
+        }
+
+        .submit {
+            margin: 22px 178px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <fieldset class="field">
+        <legend>添加数据：</legend>
+        <form action="add">
+            书名：<input name="name" type="text"/><br>
+            价格：<input name="price" type="text"/><br>
+            作者：<input name="author" type="text"/><br>
+            出版：<input name="pubDate" type="text"/><br>
+            <input class="submit" type="submit" value="提交">
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>
