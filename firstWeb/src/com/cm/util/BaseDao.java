@@ -8,7 +8,6 @@ public class BaseDao {
     private ResultSet rs;
 
     private void getConnection() {
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/booksys";
@@ -19,36 +18,8 @@ public class BaseDao {
 
     }
 
-    // 关闭
-    public void close() {
-        if (rs != null) {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (ps != null) {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (conn != null) {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     // 更新 -- 增删改
-    public int executeUpdate(String sql, Object... objects) {
-
+    protected int executeUpdate(String sql, Object... objects) {
         try {
             getConnection();
 
@@ -71,8 +42,7 @@ public class BaseDao {
     }
 
     // 查询
-    public ResultSet executeQuery(String sql, Object... objects) {
-
+    protected ResultSet executeQuery(String sql, Object... objects) {
         getConnection();
 
         try {
@@ -90,5 +60,32 @@ public class BaseDao {
         }
 
         return null;
+    }
+
+    // 关闭
+    private void close() {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

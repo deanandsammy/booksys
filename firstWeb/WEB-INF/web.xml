@@ -11,4 +11,13 @@
         <servlet-name>listServlet</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addServlet</servlet-name>
+        <servlet-class>com.cm.servlet.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
 </web-app>
