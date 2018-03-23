@@ -11,6 +11,25 @@ import java.util.List;
 
 public class BookDao extends BaseDao {
 
+    // 根据 ID 返回记录
+    public Book getByID(int id) {
+
+        String sql = "select * from book where id=?";
+
+        try {
+            ResultSet rs = executeQuery(sql, id);
+            if (rs.next()) {
+                return new Book(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getString(4), rs.getDate(5));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close();
+        }
+
+        return null;
+    }
+
     // 查询所有书籍
     public List<Book> getAll() {
 
@@ -39,4 +58,13 @@ public class BookDao extends BaseDao {
 
         return executeUpdate(sql, b.getName(), b.getPrice(), b.getAuthor(), pubDate);
     }
+
+    // 修改书籍
+    public int update(Book b) {
+
+        String sql = "update book set name=?,price=?,author=?,pubDate=? where id=" + b.getId();
+
+        return executeUpdate(sql, b.getName(), b.getPrice(), b.getAuthor(), new SimpleDateFormat("yyyy-MM-dd").format(b.getPubDate()));
+    }
+
 }

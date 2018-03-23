@@ -20,4 +20,22 @@
         <servlet-name>addServlet</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>selectById</servlet-name>
+        <servlet-class>com.cm.servlet.SelectByIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>selectById</servlet-name>
+        <url-pattern>/selectById</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>updateServlet</servlet-name>
+        <servlet-class>com.cm.servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>updateServlet</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
 </web-app>

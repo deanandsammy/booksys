@@ -63,7 +63,7 @@ public class BaseDao {
     }
 
     // 关闭
-    private void close() {
+    protected void close() {
         if (rs != null) {
             try {
                 rs.close();

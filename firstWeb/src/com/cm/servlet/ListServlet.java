@@ -31,7 +31,7 @@ public class ListServlet extends HttpServlet {
         pw.print("</title>");
         pw.print("</head>");
         pw.print("<body>");
-        pw.print("<table align='center' width=80%>");
+        pw.print("<table align='center' width=60% border='1' cellspacing='0'>");
 
         pw.print("<tr>");
         pw.print("<td>");
@@ -48,6 +48,9 @@ public class ListServlet extends HttpServlet {
         pw.print("</td>");
         pw.print("<td>");
         pw.print("PublishDate");
+        pw.print("</td>");
+        pw.print("<td>");
+        pw.print("操作");
         pw.print("</td>");
         pw.print("</tr>");
 
@@ -67,6 +70,10 @@ public class ListServlet extends HttpServlet {
             pw.print("</td>");
             pw.print("<td>");
             pw.print(aList.getPubDate());
+            pw.print("</td>");
+            pw.print("<td>");
+            pw.print("<a href='selectById?id=" + aList.getId() + "'>修改</a>");
+            pw.print("<a href='delete?id=" + aList.getId() + "'>删除</a>");
             pw.print("</td>");
             pw.print("</tr>");
         }
