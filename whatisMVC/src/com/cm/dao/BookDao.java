@@ -19,7 +19,13 @@ public class BookDao extends BaseDao {
         try {
             ResultSet rs = executeQuery(sql, id);
             if (rs.next()) {
-                return new Book(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getString(4), rs.getDate(5));
+                return new Book(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getDouble(3),
+                        rs.getString(4),
+                        rs.getDate(5)
+                );
             }
         } catch (SQLException e) {
             e.printStackTrace();
