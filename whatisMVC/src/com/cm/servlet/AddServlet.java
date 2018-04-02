@@ -31,8 +31,9 @@ public class AddServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        int categoryId = Integer.parseInt(req.getParameter("categoryId"));
 
-        Book book = new Book(bookName, price, author, pubDate);
+        Book book = new Book(bookName, price, author, pubDate, categoryId);
 
         if (bookDao.add(book) > 0) {
             resp.sendRedirect("list");

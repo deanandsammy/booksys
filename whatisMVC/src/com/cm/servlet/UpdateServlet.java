@@ -30,14 +30,14 @@ public class UpdateServlet extends HttpServlet {
         double price = Double.parseDouble(req.getParameter("price"));
         String author = req.getParameter("author");
         Date pubDate = null;
-
         try {
             pubDate = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter("pubDate"));
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        int categoryId = Integer.parseInt(req.getParameter("categoryId"));
 
-        Book b = new Book(id, bookName, price, author, pubDate);
+        Book b = new Book(id, bookName, price, author, pubDate, categoryId);
         System.out.println(b.getId());
 
         if (bookDao.update(b) > 0) {

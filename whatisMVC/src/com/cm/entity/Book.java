@@ -12,20 +12,32 @@ public class Book {
     public Book() {
     }
 
-    public Book(String name, double price, String author, Date pubDate) {
-        this.name = name;
-        this.price = price;
-        this.author = author;
-        this.pubDate = pubDate;
-    }
-
-    public Book(int id, String name, double price, String author, Date pubDate) {
+    public Book(int id, String name, double price, String author, Date pubDate, int categoryId) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.author = author;
         this.pubDate = pubDate;
+        this.categoryId = categoryId;
     }
+
+    public Book(String name, double price, String author, Date pubDate, int categoryId) {
+        this.name = name;
+        this.price = price;
+        this.author = author;
+        this.pubDate = pubDate;
+        this.categoryId = categoryId;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    private int categoryId;
 
     public int getId() {
         return id;

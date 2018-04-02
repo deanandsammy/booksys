@@ -5,31 +5,46 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .field {
-            margin: 100px auto;
-            padding-top: 18px;
-            width: 400px;
-            height: 280px;
-        }
-
-        .submit {
-            margin: 22px 178px;
-        }
-    </style>
+    <link href="https://cdn.bootcss.com/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.3.1/semantic.min.js"></script>
 </head>
 <body>
-<div class="box">
-    <fieldset class="field">
-        <legend>添加数据：</legend>
-        <form action="add" method="post">
-            书名：<input name="name" type="text"/><br>
-            价格：<input name="price" type="text"/><br>
-            作者：<input name="author" type="text"/><br>
-            出版：<input name="pubDate" type="text"/><br>
-            <input class="submit" type="submit" value="提交">
-        </form>
-    </fieldset>
+
+<div class="ui container" style="width: 600px;">
+    <h2 class="ui header">图书数据录入界面</h2>
+
+    <form class="ui form" action="addServlet">
+        <div class="field">
+            <label for="">书名</label>
+            <input type="text" name="name">
+        </div>
+        <div class="field">
+            <label for="">价格</label>
+            <input type="text" name="price">
+        </div>
+        <div class="field">
+            <label for="">作者</label>
+            <input type="text" name="author">
+        </div>
+        <div class="field">
+            <label for="">出版日期</label>
+            <input type="text" name="pubDate">
+        </div>
+        <div class="field">
+            <label for="">所属类别</label>
+            <input type="text" name="categoryId">
+        </div>
+
+        <div class="field">
+            <div class="ui checkbox">
+                <input type="checkbox" id="check">
+                <label for="check">同意条款</label>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
 </div>
+
 </body>
 </html>
